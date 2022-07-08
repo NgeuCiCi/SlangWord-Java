@@ -9,6 +9,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import static tudienanhviet.JSONParser.getJSONFromFile;
+import static tudienanhviet.MainClass.listTuDien;
 
 /**
  *
@@ -21,6 +25,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     public MainJFrame() {
         initComponents();
+        System.out.println("initMainJFrame: " + listTuDien.size());
     }
 
     /**
@@ -80,11 +85,29 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoadMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoadMousePressed
-        // TODO add your handling code here:
-        JFileChooser file =new JFileChooser();
-        if(file.showOpenDialog(null)== JFileChooser.APPROVE_OPTION){
+        // TODO add your handling code here:        
+        JFileChooser file = new JFileChooser();
+        if (file.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             File f = file.getSelectedFile();
-            System.out.print(f.getPath());
+//            System.out.print(f.getPath());
+            JSONParser parser = new JSONParser();
+            System.out.println("Bat dau doc du lieu tu file");
+
+            try {
+                String data = getJSONFromFile(f.getPath());
+                JSONArray arr = new JSONArray(data);
+                for (int i = 0; i < arr.length(); i++) {
+                    JSONObject item = new JSONObject(arr.get(i).toString());
+
+                    TuDienClass tuDien1;
+                    tuDien1 = new TuDienClass(item.get("text").toString(), item.get("content").toString());
+                    listTuDien.add(tuDien1);
+                }
+                System.out.println("set data: " + listTuDien.size());
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+            }
+
         }
 //                
 //        JFileChooser fileDialog = new JFileChooser();
@@ -105,8 +128,8 @@ public class MainJFrame extends javax.swing.JFrame {
 //        fileDialog.setVisible(true);
 //        
 //        System.out.print(fileDialog.getFile)
-        
-       
+
+
     }//GEN-LAST:event_btnLoadMousePressed
 
     /**
