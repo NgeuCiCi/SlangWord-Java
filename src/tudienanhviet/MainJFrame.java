@@ -39,7 +39,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnTimKiemTheoTu = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         jButton3.setText("Tim kiem theo tu");
@@ -53,7 +53,12 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Tim kiem theo tu");
+        btnTimKiemTheoTu.setText("Tim kiem theo tu");
+        btnTimKiemTheoTu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnTimKiemTheoTuMousePressed(evt);
+            }
+        });
 
         jButton4.setText("Tim kiem theo nghia");
 
@@ -65,7 +70,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnTimKiemTheoTu, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -76,7 +81,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTimKiemTheoTu, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(227, Short.MAX_VALUE))
         );
@@ -132,6 +137,12 @@ public class MainJFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnLoadMousePressed
 
+    private void btnTimKiemTheoTuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimKiemTheoTuMousePressed
+        // TODO add your handling code here:
+        TimKiemTheoTuJFrame timKiemTheoTuScreen = new TimKiemTheoTuJFrame();
+        timKiemTheoTuScreen.setVisible(true);
+    }//GEN-LAST:event_btnTimKiemTheoTuMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -169,7 +180,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoad;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnTimKiemTheoTu;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables

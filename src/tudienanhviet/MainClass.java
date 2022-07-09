@@ -22,6 +22,8 @@ public class MainClass {
         System.out.print("App");
         MainJFrame mainScreen = new MainJFrame();
         mainScreen.setVisible(true);
+        
+        
 
 //        JSONArray a1 = new JSONArray("[{\"text\":\"to take up residence in the United States\",\"content\":\"??nh c? M?\" },{text:\"to make narrow, to begin to close\",content:\"h?p l?i\" }]");
 //        String tmp = "[{\"text\":\"Adam\",\"content\":\"A Dong \"},{\"text\":\"Arhant, Lohan (follower of Buddha)\",\"content\":\"A La H�n \"}]";
